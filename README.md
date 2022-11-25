@@ -43,7 +43,7 @@ make
 
 2. Not quite sure it's 100% working, but I can open it now; Need more testing
 
-3. After open the program, need to set PAML (where you can find bin/mamatree) in Tools > configuration
+3. After opening the program, need to set PAML (where you can find bin/mamatree) in Tools > configuration
 
 4. Good luck !!!
 
@@ -52,8 +52,6 @@ make
     Bo Xu of Institute of Zoology, Chinese Academy of Sciences in Beijing
 
 ## Revision
-
-# Author:
 
     卢福浩(Fu-Hao Lu)
     
