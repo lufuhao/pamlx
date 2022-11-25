@@ -4,6 +4,7 @@
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QtPrintSupport/QPrinter>
 
 #include "ui_mainwindow.h"
 
