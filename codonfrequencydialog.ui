@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CodonFrequencyDialog</class>
+ <widget class="QDialog" name="CodonFrequencyDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>470</width>
+    <height>290</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Codon frequency</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTableWidget" name="tableWidget">
+     <row>
+      <property name="text">
+       <string>UU</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>UC</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>UA</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>UG</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>CU</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>CC</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>CA</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>CG</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>AU</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>AC</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>AA</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>AG</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>GU</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>GC</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>GA</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>GG</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>U</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>A</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>G</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>0.00983798</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>0.01745548</string>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string>0.00222048</string>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string>0.01443315</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>0.00844604</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>0.01498576</string>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string>0.00190632</string>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string>0.01239105</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>0.01064012</string>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>0.01887870</string>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>0.00469486</string>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>0.00833007</string>
+      </property>
+     </item>
+     <item row="3" column="2">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="3" column="3">
+      <property name="text">
+       <string>0.00688776</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>0.01592816</string>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>0.02826125</string>
+      </property>
+     </item>
+     <item row="4" column="2">
+      <property name="text">
+       <string>0.00359507</string>
+      </property>
+     </item>
+     <item row="4" column="3">
+      <property name="text">
+       <string>0.02336796</string>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>0.01367453</string>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string>0.02426265</string>
+      </property>
+     </item>
+     <item row="5" column="2">
+      <property name="text">
+       <string>0.00308642</string>
+      </property>
+     </item>
+     <item row="5" column="3">
+      <property name="text">
+       <string>0.02006170</string>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>0.01722686</string>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string>0.03056552</string>
+      </property>
+     </item>
+     <item row="6" column="2">
+      <property name="text">
+       <string>0.00388819</string>
+      </property>
+     </item>
+     <item row="6" column="3">
+      <property name="text">
+       <string>0.02527326</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>0.00760121</string>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string>0.01348678</string>
+      </property>
+     </item>
+     <item row="7" column="2">
+      <property name="text">
+       <string>0.00171563</string>
+      </property>
+     </item>
+     <item row="7" column="3">
+      <property name="text">
+       <string>0.01115161</string>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>0.01574077</string>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string>0.02792876</string>
+      </property>
+     </item>
+     <item row="8" column="2">
+      <property name="text">
+       <string>0.00355278</string>
+      </property>
+     </item>
+     <item row="8" column="3">
+      <property name="text">
+       <string>0.02309304</string>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>0.01351366</string>
+      </property>
+     </item>
+     <item row="9" column="1">
+      <property name="text">
+       <string>0.02397721</string>
+      </property>
+     </item>
+     <item row="9" column="2">
+      <property name="text">
+       <string>0.00305010</string>
+      </property>
+     </item>
+     <item row="9" column="3">
+      <property name="text">
+       <string>0.01982568</string>
+      </property>
+     </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>0.01702419</string>
+      </property>
+     </item>
+     <item row="10" column="1">
+      <property name="text">
+       <string>0.03020593</string>
+      </property>
+     </item>
+     <item row="10" column="2">
+      <property name="text">
+       <string>0.00384245</string>
+      </property>
+     </item>
+     <item row="10" column="3">
+      <property name="text">
+       <string>0.02497593</string>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>0.00751178</string>
+      </property>
+     </item>
+     <item row="11" column="1">
+      <property name="text">
+       <string>0.01332811</string>
+      </property>
+     </item>
+     <item row="11" column="2">
+      <property name="text">
+       <string>0.00169545</string>
+      </property>
+     </item>
+     <item row="11" column="3">
+      <property name="text">
+       <string>0.01102042</string>
+      </property>
+     </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>0.02525082</string>
+      </property>
+     </item>
+     <item row="12" column="1">
+      <property name="text">
+       <string>0.04480239</string>
+      </property>
+     </item>
+     <item row="12" column="2">
+      <property name="text">
+       <string>0.00569924</string>
+      </property>
+     </item>
+     <item row="12" column="3">
+      <property name="text">
+       <string>0.03704508</string>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>0.02167816</string>
+      </property>
+     </item>
+     <item row="13" column="1">
+      <property name="text">
+       <string>0.03846344</string>
+      </property>
+     </item>
+     <item row="13" column="2">
+      <property name="text">
+       <string>0.00489288</string>
+      </property>
+     </item>
+     <item row="13" column="3">
+      <property name="text">
+       <string>0.03180369</string>
+      </property>
+     </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>0.02730964</string>
+      </property>
+     </item>
+     <item row="14" column="1">
+      <property name="text">
+       <string>0.04845534</string>
+      </property>
+     </item>
+     <item row="14" column="2">
+      <property name="text">
+       <string>0.00616393</string>
+      </property>
+     </item>
+     <item row="14" column="3">
+      <property name="text">
+       <string>0.04006555</string>
+      </property>
+     </item>
+     <item row="15" column="0">
+      <property name="text">
+       <string>0.01205015</string>
+      </property>
+     </item>
+     <item row="15" column="1">
+      <property name="text">
+       <string>0.02138052</string>
+      </property>
+     </item>
+     <item row="15" column="2">
+      <property name="text">
+       <string>0.00271978</string>
+      </property>
+     </item>
+     <item row="15" column="3">
+      <property name="text">
+       <string>0.01767859</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CodonFrequencyDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CodonFrequencyDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
