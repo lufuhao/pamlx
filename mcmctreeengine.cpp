@@ -7,7 +7,7 @@
 #include "cstylemcmctreectlloader.h"
 #include <QDir>
 #include <QTextStream>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 #include "mydebug.h"
 
 MCMCTreeEngine::MCMCTreeEngine(const QString &pamlPath, QTextEdit *aOutputWindow, int msec1, int msec2, QObject *parent) :
@@ -328,8 +328,10 @@ int MCMCTreeEngine::compareVersion(const QString& versionStr) const
     QString mRevision, revision;
     char c;
 
-    QTextStream(mVersion.toAscii()) >> mMajor >> c >> mMinor >> mRevision;
-    QTextStream(versionStr.toAscii()) >> major >> c >> minor >> revision;
+//    QTextStream(mVersion.toAscii()) >> mMajor >> c >> mMinor >> mRevision;
+//    QTextStream(versionStr.toAscii()) >> major >> c >> minor >> revision;
+    QTextStream(mVersion.toLatin1()) >> mMajor >> c >> mMinor >> mRevision;
+    QTextStream(versionStr.toLatin1()) >> major >> c >> minor >> revision;
 
     int ret;
 

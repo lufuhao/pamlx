@@ -5,7 +5,7 @@
 #include "pamlhistorydialog.h"
 #include <QDir>
 #include <QTextStream>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 PAMLHistoryDialog::PAMLHistoryDialog(const QString &pamlHistory_FileName, const QFont &outputFont, QWidget *parent) :
     QDialog(parent)

@@ -16,18 +16,20 @@
 #include "pamlhistorydialog.h"
 #include "opendialog.h"
 #include "outputwindow.h"
-#include <QCompleter>
-#include <QFileDialog>
-#include <QFileSystemModel>
+#include <QtWidgets/QCompleter>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QFileSystemModel>
 #include <QCloseEvent>
 #include <QClipboard>
-#include <QMessageBox>
-#include <QPrinter>
-#include <QFontDialog>
-#include <QPrintPreviewDialog>
-#include <QPrintDialog>
+#include <QtWidgets/QMessageBox>
+#include <QtPrintSupport/QPrinter>
+#include <QtWidgets/QFontDialog>
+#include <QtPrintSupport/QPrintPreviewDialog>
+#include <QtPrintSupport/QPrintDialog>
 #include <QUrl>
 #include <typeinfo>
+#include <QtWidgets/QButtonGroup>
+#include <QMimeData>
 
 static const char* strList[] = {"", "MCMCTree", "BaseML", "CodeML", "PAMP", "YN00", "Evolver"};
 static const double precision = 1e-12;
@@ -1040,9 +1042,10 @@ void MainWindow::updateEnginesPath()
 {
     if(mcmcTreeEngine) {
         mcmcTreeEngine->setPath(absolutePAMLPath);
-        if( mcmcTreeEngine->state() == Engine::NotRunning )
+        if( mcmcTreeEngine->state() == Engine::NotRunning ) {
             groupBox_8->setHidden( mcmcTreeEngine->compareVersion("4.9") >= 0 );
             pushButton->setEnabled( mcmcTreeEngine->isStatusOk() );
+        }
     }
 
     if(basemlEngine) {
@@ -3520,7 +3523,8 @@ void MainWindow::on_comboBox_37_currentIndexChanged(int index)
     case 1:
         comboBox_39->setItemText(0, tr("1: b"));
         comboBox_39->insertItems(1, QStringList()
-         << QApplication::translate("MainWindow", "2: two branch types", 0, QApplication::UnicodeUTF8)
+//         << QApplication::translate("MainWindow", "2: two branch types", 0, QApplication::UnicodeUTF8)
+        << QApplication::translate("MainWindow", "2: two branch types", 0)
         );
         comboBox_39->setItemData(0, 1);
         comboBox_39->setItemData(1, 2);
@@ -3582,9 +3586,12 @@ void MainWindow::on_comboBox_37_currentIndexChanged(int index)
     default:
         comboBox_39->setItemText(0, tr("0: one"));
         comboBox_39->insertItems(1, QStringList()
-         << QApplication::translate("MainWindow", "1: b", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("MainWindow", "3:", 0, QApplication::UnicodeUTF8)
+//         << QApplication::translate("MainWindow", "1: b", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("MainWindow", "1: b", 0)
+//         << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0)
+//         << QApplication::translate("MainWindow", "3:", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("MainWindow", "3:", 0)
         );
         if(!ok) currentItemData = 0;
         comboBox_39->setCurrentIndex(currentItemData);
@@ -3650,10 +3657,14 @@ void MainWindow::on_comboBox_31_currentIndexChanged(int index)
     if( index == 1 && num != 4 ) {
         if(num == 0) {
             comboBox_39->insertItems(0, QStringList()
-             << QApplication::translate("MainWindow", "0: one", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "1: b", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "3:", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "0: one", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "0: one", 0)
+//             << QApplication::translate("MainWindow", "1: b", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "1: b", 0)
+//             << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "2: 2 or more dN/dS", 0)
+//             << QApplication::translate("MainWindow", "3:", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "3:", 0)
            );
         }
         else {
@@ -3682,14 +3693,22 @@ void MainWindow::on_comboBox_31_currentIndexChanged(int index)
     if( (index == 2 || index == 3) && num != 8 ) {
         if(num == 0) {
             comboBox_39->insertItems(0, QStringList()
-             << QApplication::translate("MainWindow", "0: poisson", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "1: proportional", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "2: Empirical", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "3: Empirical+F", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "6: FromCodon", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "7: AAClasses", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "8: REVaa_0", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "0: poisson", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "0: poisson", 0)
+//             << QApplication::translate("MainWindow", "1: proportional", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "1: proportional", 0)
+//             << QApplication::translate("MainWindow", "2: Empirical", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "2: Empirical", 0)
+//             << QApplication::translate("MainWindow", "3: Empirical+F", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "3: Empirical+F", 0)
+//             << QApplication::translate("MainWindow", "6: FromCodon", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "6: FromCodon", 0)
+//             << QApplication::translate("MainWindow", "7: AAClasses", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "7: AAClasses", 0)
+//             << QApplication::translate("MainWindow", "8: REVaa_0", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "8: REVaa_0", 0)
+//             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0)
             );
         }
         else {
@@ -3702,10 +3721,14 @@ void MainWindow::on_comboBox_31_currentIndexChanged(int index)
             comboBox_39->setItemText(2, tr("2: Empirical"));
             comboBox_39->setItemText(3, tr("3: Empirical+F"));
             comboBox_39->insertItems(4, QStringList()
-             << QApplication::translate("MainWindow", "6: FromCodon", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "7: AAClasses", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "8: REVaa_0", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "6: FromCodon", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "7: AAClasses", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "8: REVaa_0", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "6: FromCodon", 0)
+             << QApplication::translate("MainWindow", "7: AAClasses", 0)
+             << QApplication::translate("MainWindow", "8: REVaa_0", 0)
+             << QApplication::translate("MainWindow", "9: REVaa(nr=189)", 0)
             );
         }
         comboBox_39->setItemData(0, 0);
@@ -3722,20 +3745,28 @@ void MainWindow::on_comboBox_31_currentIndexChanged(int index)
     if( index == 1 && num != 5 ) {
         if(num == 0) {
             comboBox_40->insertItems(0, QStringList()
-             << QApplication::translate("MainWindow", "0: rates", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "1: separate", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "2: diff pi", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "3: diff kapa", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "4: all diff", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "0: rates", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "1: separate", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "2: diff pi", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "3: diff kapa", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "4: all diff", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "0: rates", 0)
+             << QApplication::translate("MainWindow", "1: separate", 0)
+             << QApplication::translate("MainWindow", "2: diff pi", 0)
+             << QApplication::translate("MainWindow", "3: diff kapa", 0)
+             << QApplication::translate("MainWindow", "4: all diff", 0)
             );
         }
         else {
             comboBox_40->setItemData(0, QVariant::Invalid);
             comboBox_40->setItemData(1, QVariant::Invalid);
             comboBox_40->insertItems(2, QStringList()
-             << QApplication::translate("MainWindow", "2: diff pi", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "3: diff kapa", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "4: all diff", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "2: diff pi", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "3: diff kapa", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "4: all diff", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "2: diff pi", 0)
+             << QApplication::translate("MainWindow", "3: diff kapa", 0)
+             << QApplication::translate("MainWindow", "4: all diff", 0)
             );
         }
         comboBox_40->setItemData(0, 0);
@@ -3747,8 +3778,10 @@ void MainWindow::on_comboBox_31_currentIndexChanged(int index)
     if( (index == 2 || index == 3) && num != 2 ) {
         if(num == 0) {
             comboBox_40->insertItems(0, QStringList()
-             << QApplication::translate("MainWindow", "0: rates", 0, QApplication::UnicodeUTF8)
-             << QApplication::translate("MainWindow", "1: separate", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "0: rates", 0, QApplication::UnicodeUTF8)
+//             << QApplication::translate("MainWindow", "1: separate", 0, QApplication::UnicodeUTF8)
+             << QApplication::translate("MainWindow", "0: rates", 0)
+             << QApplication::translate("MainWindow", "1: separate", 0)
             );
         }
         else {

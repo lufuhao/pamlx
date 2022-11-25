@@ -4,8 +4,8 @@
 
 #include "engine.h"
 #include <QDir>
-#include <QTextEdit>
-#include <QMessageBox>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QMessageBox>
 
 Engine::Engine(QTextEdit *aOutputWindow, int msec1, int msec2, QObject *parent) :
     QObject(parent),

@@ -7,7 +7,7 @@
 #include "cstylecodemlctlloader.h"
 #include <QDir>
 #include <QTextStream>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 CodemlEngine::CodemlEngine(const QString &pamlPath, QTextEdit *aOutputWindow, int msec1, int msec2, QObject *parent) :
     Engine(aOutputWindow, msec1, msec2, parent)

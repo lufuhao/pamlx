@@ -7,7 +7,7 @@
 #include "cstyleevolverctlloader.h"
 #include <QDir>
 #include <QTextStream>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 EvolverEngine::EvolverEngine(const QString &pamlPath, EvolverEngine::Type type, QTextEdit *aOutputWindow, int msec1, int msec2, QObject *parent) :
     Engine(aOutputWindow, msec1, msec2, parent),

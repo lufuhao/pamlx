@@ -4,9 +4,9 @@
 
 #include "configurationdialog.h"
 #include "mainwindow.h"
-#include <QCompleter>
-#include <QFileDialog>
-#include <QFileSystemModel>
+#include <QtWidgets/QCompleter>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QFileSystemModel>
 
 ConfigurationDialog::ConfigurationDialog(QWidget *parent) :
     QDialog(parent)

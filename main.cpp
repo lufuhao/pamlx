@@ -2,8 +2,10 @@
 // Copyright (C) 2012 Bo Xu <xuxbob@gmail.com>
 //------------------------------------------------
 
-#include <QtGui/QApplication>
-#include <QSplashScreen>
+//#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
+//#include <QSplashScreen>
+#include <QtWidgets/QSplashScreen>
 #include "mainwindow.h"
 #include "info.h"
 #include "mydebug.h"
